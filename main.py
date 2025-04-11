@@ -7,7 +7,7 @@ targetURL = BeautifulSoup(response.text,'html.parser')
 
 def scrape_temper (temper: str):
     temper_list = targetURL.find(id=temper).find_next().contents
-    temper_score = temper_list[4]
+    temper_score = int(temper_list[4])
     temper_tier = temper_list[8]
     match temper:
         case 'Ansiedade'|'Raiva'|'Melancolia'|'Autoconsciência'|'Impulsividade'|'Vulnerabilidade':
@@ -20,4 +20,4 @@ def scrape_temper (temper: str):
             greatfive = 'Afabilidade'
         case 'Autoeficácia'|'Ordem'|'Senso de Dever'|'Realização-Esforço'|'Autodisciplina'|'Cautela':
             greatfive = 'Consciência'
-    return [greatfive, temper, temper_score, temper_tier]
+    return [str(date),greatfive, temper, temper_score, temper_tier]

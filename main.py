@@ -21,3 +21,5 @@ def scrape_temper (temper: str):
         case 'Autoeficácia'|'Ordem'|'Senso de Dever'|'Realização-Esforço'|'Autodisciplina'|'Cautela':
             greatfive = 'Consciência'
     return [str(date),greatfive, temper, temper_score, temper_tier]
+
+date = targetURL.find('span', class_='flex-1 text-inherit font-normal px-2').contents[0]

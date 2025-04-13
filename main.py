@@ -23,3 +23,9 @@ def scrape_temper (temper: str):
     return [str(date),greatfive, temper, temper_score, temper_tier]
 
 date = targetURL.find('span', class_='flex-1 text-inherit font-normal px-2').contents[0]
+
+tempers = ['Ansiedade','Raiva','Melancolia','Autoconsciência','Impulsividade','Vulnerabilidade','Simpatia','Simpatia','Sociabilidade','Assertividade','Atividade','Busca de Sensações','Emoções Positivas','Fantasia','Estética','Emotividade','Aventura','Intelecto','Liberalismo','Confiança','Moralidade','Altruísmo','Cooperação','Modéstia','Empatia','Autoeficácia','Ordem','Senso de Dever','Realização-Esforço','Autodisciplina','Cautela']
+
+results = []
+for each in tempers:
+    results.append(scrape_temper(each))

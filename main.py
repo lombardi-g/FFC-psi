@@ -16,7 +16,7 @@ def scrape_temper (temper: str):
         case 'Simpatia'|'Simpatia'|'Sociabilidade'|'Assertividade'|'Atividade'|'Busca de Sensações'|'Emoções Positivas':
             greatfive = 'Extroversão'
         case 'Fantasia'|'Estética'|'Emotividade'|'Aventura'|'Intelecto'|'Liberalismo':
-            greatfive = 'Abertura a Extroversão'
+            greatfive = 'Abertura a Experiência'
         case 'Confiança'|'Moralidade'|'Altruísmo'|'Cooperação'|'Modéstia'|'Empatia':
             greatfive = 'Afabilidade'
         case 'Autoeficácia'|'Ordem'|'Senso de Dever'|'Realização-Esforço'|'Autodisciplina'|'Cautela':
@@ -30,3 +30,5 @@ tempers = ['Ansiedade','Raiva','Melancolia','Autoconsciência','Impulsividade','
 results = []
 for each in tempers:
     results.append(scrape_temper(each))
+
+table = pd.DataFrame(results,columns= ('Data','Cinco Grandes','Emoção','Pontuação','Classificação'))

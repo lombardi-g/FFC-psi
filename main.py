@@ -1,10 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 from input_interface import url
+import openpyxl
 import pandas as pd
 
 response = requests.get(url)
 targetURL = BeautifulSoup(response.text,'html.parser')
+file_path = 'bigFive.xlsx'
 
 def scrape_temper (temper: str):
     temper_list = targetURL.find(id=temper).find_next().contents

@@ -34,3 +34,8 @@ for each in tempers:
     results.append(scrape_temper(each))
 
 table = pd.DataFrame(results,columns= ('Data','Cinco Grandes','Emoção','Pontuação','Classificação'))
+try:
+...
+
+except:
+...

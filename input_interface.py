@@ -35,3 +35,12 @@ class BigFiveMenu(QtWidgets.QWidget):
         self.url_input_box.returnPressed.connect(self.assert_and_return)
 
         self.show()
+        
+    @QtCore.Slot()
+    def assert_and_return(self):
+        try:
+            run(self.url_input_box.text())
+            self.response.setText("Ok") 
+        except:
+            self.response.setText("Error")
+

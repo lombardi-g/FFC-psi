@@ -44,3 +44,8 @@ class BigFiveMenu(QtWidgets.QWidget):
         except:
             self.response.setText("Error")
 
+if __name__ == '__main__':
+    app = QtWidgets.QApplication([])
+    scrape_app = BigFiveMenu()
+    scrape_app.resize(350,200)
+    sys.exit(app.exec())
